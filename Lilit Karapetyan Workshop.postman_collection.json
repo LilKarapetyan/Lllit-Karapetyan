@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "19f48729-3e40-497d-8723-e3866d4f9969",
+		"name": "Lilit Karapetyan Workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29228123"
+	},
+	"item": [
+		{
+			"name": "Login / Get Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Lilit\",\r\n    \"email\":\"lilit.karapetyan86@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basic_url}}/swagger/#/",
+					"host": [
+						"{{basic_url}}"
+					],
+					"path": [
+						"swagger",
+						""
+					],
+					"hash": "/"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Advanced Courses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "curl -X GET \"https://qwallity-dev.onrender.com/courses/advanced/api\" -H  \"accept: */*\" -H  \"Authorization: Bearer \"https://qwallity-dev.onrender.com/login/api\" -H  \"accept: */*\" -H  \"Authorization: Basic bGlsaXQua2FyYXBldHlhbjg2QGdtYWlsLmNvbTpsaWxrYTAwMQ==\" -d \"\"\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basic_url}}/courses/advanced/api",
+					"host": [
+						"{{basic_url}}"
+					],
+					"path": [
+						"courses",
+						"advanced",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get  Fundamental Courses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "curl -X GET \"https://qwallity-dev.onrender.com/courses/advanced/api\" -H  \"accept: */*\" -H  \"Authorization: Bearer \"https://qwallity-dev.onrender.com/login/api\" -H  \"accept: */*\" -H  \"Authorization: Basic bGlsaXQua2FyYXBldHlhbjg2QGdtYWlsLmNvbTpsaWxrYTAwMQ==\" -d \"\"\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basic_url}}/courses/fundamental/api",
+					"host": [
+						"{{basic_url}}"
+					],
+					"path": [
+						"courses",
+						"fundamental",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "curl -X GET \"https://qwallity-dev.onrender.com/courses/advanced/api\" -H  \"accept: */*\" -H  \"Authorization: Bearer curl -X GET \"https://qwallity-dev.onrender.com/courses/advanced/api\" -H  \"accept: */*\"\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"JS\",\r\n  \"body\": \"java\",\r\n  \"coursetype\": \"1\",\r\n  \"author\": \"LK\",\r\n  \"price\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basic_url}}/add_course/api",
+					"host": [
+						"{{basic_url}}"
+					],
+					"path": [
+						"add_course",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "lilit.karapetyan86@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "lilka001",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"JS\",\r\n  \"body\": \"java\",\r\n  \"coursetype\": \"1\",\r\n  \"author\": \"LK\",\r\n  \"price\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qwallity-dev.onrender.com/98621454/course/update/",
+					"protocol": "https",
+					"host": [
+						"qwallity-dev",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"98621454",
+						"course",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "0000",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "lilit.karapetyan86@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"LK\",\r\n  \"body\": \"java\",\r\n  \"coursetype\": \"1\",\r\n  \"id\": \"98621454\",\r\n  \"price\": 100,\r\n  \"title\": \"JS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basic_url}}/courses/course/",
+					"host": [
+						"{{basic_url}}"
+					],
+					"path": [
+						"courses",
+						"course",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
